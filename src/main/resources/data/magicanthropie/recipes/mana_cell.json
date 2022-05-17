@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0#0",
+    "#X#",
+    "0#0"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass"
+    },
+    "0": {
+      "item": "magicanthropie:mana_ingot"
+    },
+    "X": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "magicanthropie:mana_cell"
+  }
+}
