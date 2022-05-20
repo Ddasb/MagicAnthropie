@@ -1,6 +1,8 @@
 package com.kiuseii.magicanthropie.setup;
 
 import com.kiuseii.magicanthropie.MagicAnthropie;
+import com.kiuseii.magicanthropie.common.item.ManaInfusedPowder;
+import com.kiuseii.magicanthropie.common.item.ManaManipulationStaff;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +19,12 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> MANA_INFUSED_INGOT =
             ITEMS.register("mana_infused_ingot", () -> new Item(new Item.Properties().tab(MagicAnthropie.MAGICANTHROPIE_TAB)));
+
+    public static final RegistryObject<Item> MANA_INFUSED_POWDER =
+            ITEMS.register("mana_infused_powder", () -> new ManaInfusedPowder(new Item.Properties().tab(MagicAnthropie.MAGICANTHROPIE_TAB)));
+
+    public static final RegistryObject<Item> MANA_MANIPULATION_STAFF =
+            ITEMS.register("mana_manipulation_staff", () -> new ManaManipulationStaff(new Item.Properties().tab(MagicAnthropie.MAGICANTHROPIE_TAB)));
 
     public static void register (IEventBus eventBus) {
         ITEMS.register(eventBus);

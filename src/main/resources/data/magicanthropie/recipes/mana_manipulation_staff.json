@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #0",
+    "WX#",
+    "XW "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "0": {
+      "item": "magicanthropie:mana_infused_ingot"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "magicanthropie:mana_dust"
+    }
+  },
+  "result": {
+    "item": "magicanthropie:mana_manipulation_staff"
+  }
+}
