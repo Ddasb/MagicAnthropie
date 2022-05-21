@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.text.html.parser.Entity;
 
+@Mod.EventBusSubscriber(modid = MagicAnthropie.MOD_ID)
 public class ManaDensityAttacher {
     private static class ManaDensityProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
         public static final ResourceLocation IDENTIFIER = new ResourceLocation(MagicAnthropie.MOD_ID, "manaDensityCapability");
@@ -45,6 +46,7 @@ public class ManaDensityAttacher {
         }
     }
 
+    @SubscribeEvent
     public static void attach(final AttachCapabilitiesEvent<Entity> event) {
         final ManaDensityProvider provider = new ManaDensityProvider();
 

@@ -38,14 +38,10 @@ public class MagicAnthropie {
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
-        eventBus.addListener(this::capabilitySetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void capabilitySetup (final AttachCapabilitiesEvent<Entity> event){
-        ManaAttacher.attach(event);
-    }
     private void clientSetup (final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(BlockRegistry.MANA_CELL.get(), RenderType.translucent());
     }

@@ -12,9 +12,11 @@ import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@Mod.EventBusSubscriber(modid = MagicAnthropie.MOD_ID)
 public class ManaAttacher {
     private static class ManaProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
         public static final ResourceLocation IDENTIFIER = new ResourceLocation(MagicAnthropie.MOD_ID, "manaCapability");

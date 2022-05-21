@@ -1,6 +1,8 @@
 package com.kiuseii.magicanthropie.capabilities;
 
+import com.kiuseii.magicanthropie.MagicAnthropie;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraftforge.fml.common.Mod;
 
 public class ManaImplementation implements IMana {
     private static final String NBT_KEY_MANA = "mana";
