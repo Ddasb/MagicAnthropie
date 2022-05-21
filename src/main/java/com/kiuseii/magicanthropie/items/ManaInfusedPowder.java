@@ -1,4 +1,4 @@
-package com.kiuseii.magicanthropie.common.item;
+package com.kiuseii.magicanthropie.items;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
