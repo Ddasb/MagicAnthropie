@@ -1,17 +1,13 @@
 package com.kiuseii.magicanthropie.items;
 
-import com.kiuseii.magicanthropie.capabilities.IMana;
-import com.kiuseii.magicanthropie.capabilities.ManaCapability;
-import com.kiuseii.magicanthropie.capabilities.ManaImplementation;
+import com.kiuseii.magicanthropie.capabilities.CapabilityRegistry;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.server.level.ChunkHolder;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraftforge.common.capabilities.CapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.util.NonNullSupplier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class ManaManipulationStaff extends Item {
     public ManaManipulationStaff(Item.Properties pProperties) {
@@ -19,20 +15,16 @@ public class ManaManipulationStaff extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext pContext) {
-        if(pContext.getLevel().isClientSide()){
-            Player player = pContext.getPlayer();
-            LazyOptional<IMana> optional = player.getCapability(ManaCapability.INSTANCE);
-            IMana manaCap = optional.orElseThrow(() -> new NullPointerException("ha"));
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        CapabilityRegistry.getMana(pPlayer).ifPresent(iMana -> {
+            int currentMana = iMana.consumeMana(1000);
 
-            int mana = manaCap.getMana();
+            pPlayer.sendMessage(new TextComponent("Mana : " + currentMana), pPlayer.getUUID());
+            pPlayer.sendMessage(new TextComponent("Test"), pPlayer.getUUID());
+        });
 
-            manaCap.setMana(mana - 1000);
+        pPlayer.sendMessage(new TextComponent("Test 2"), pPlayer.getUUID());
 
-            String message = String.format("This " + manaCap.getMana());
-
-            player.sendMessage(new TextComponent(message), player.getUUID());
-        }
-        return super.useOn(pContext);
+        return super.use(pLevel, pPlayer, pUsedHand);
     }
 }

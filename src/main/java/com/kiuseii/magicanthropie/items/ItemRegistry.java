@@ -1,4 +1,4 @@
-package com.kiuseii.magicanthropie.setup;
+package com.kiuseii.magicanthropie.items;
 
 import com.kiuseii.magicanthropie.MagicAnthropie;
 import com.kiuseii.magicanthropie.items.ManaInfusedPowder;

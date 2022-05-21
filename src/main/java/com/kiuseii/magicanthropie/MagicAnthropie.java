@@ -1,17 +1,12 @@
 package com.kiuseii.magicanthropie;
 
-import com.kiuseii.magicanthropie.capabilities.ManaAttacher;
-import com.kiuseii.magicanthropie.capabilities.ManaCapability;
-import com.kiuseii.magicanthropie.setup.BlockRegistry;
-import com.kiuseii.magicanthropie.setup.ItemRegistry;
+import com.kiuseii.magicanthropie.blocks.BlockRegistry;
+import com.kiuseii.magicanthropie.items.ItemRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;

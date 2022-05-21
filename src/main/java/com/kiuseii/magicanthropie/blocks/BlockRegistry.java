@@ -1,11 +1,11 @@
-package com.kiuseii.magicanthropie.setup;
+package com.kiuseii.magicanthropie.blocks;
 
 import com.kiuseii.magicanthropie.MagicAnthropie;
+import com.kiuseii.magicanthropie.items.ItemRegistry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,7 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS =
