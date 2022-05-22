@@ -35,17 +35,5 @@ public class CapabilityRegistry {
         public static void registerCapabilities(final RegisterCapabilitiesEvent event) {
             event.register(IManaCap.class);
         }
-
-        @SubscribeEvent
-        public static void playerClone(PlayerEvent.Clone event) {
-            Player oldPlayer = event.getOriginal();
-            oldPlayer.revive();
-
-            getMana(oldPlayer).ifPresent(oldMaxMana -> getMana(event.getPlayer()).ifPresent(newMaxMana -> {
-                newMaxMana.setMana(oldMaxMana.getCurrentMana());
-            }));
-
-            event.getOriginal().invalidateCaps();
-        }
     }
 }

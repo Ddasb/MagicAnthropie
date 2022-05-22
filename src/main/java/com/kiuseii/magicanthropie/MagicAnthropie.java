@@ -2,6 +2,7 @@ package com.kiuseii.magicanthropie;
 
 import com.kiuseii.magicanthropie.blocks.BlockRegistry;
 import com.kiuseii.magicanthropie.items.ItemRegistry;
+import com.kiuseii.magicanthropie.network.PacketHandler;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
@@ -41,5 +42,7 @@ public class MagicAnthropie {
         ItemBlockRenderTypes.setRenderLayer(BlockRegistry.MANA_CELL.get(), RenderType.translucent());
     }
 
-    private void setup(final FMLCommonSetupEvent event) {}
+    private void setup(final FMLCommonSetupEvent event) {
+        PacketHandler.register();
+    }
 }

@@ -1,10 +1,19 @@
 package com.kiuseii.magicanthropie.capabilities;
 
+import com.kiuseii.magicanthropie.network.ManaPacket;
+import com.kiuseii.magicanthropie.network.PacketHandler;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundUpdateAttributesPacket;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import org.apache.logging.log4j.core.jmx.Server;
 
 import javax.annotation.Nullable;
+import java.util.Collections;
 
 public class ManaCap implements IManaCap {
     private final LivingEntity livingEntity;
@@ -63,4 +72,10 @@ public class ManaCap implements IManaCap {
         setMana(tag.getInt("current"));
     }
 
+    @Override
+    public void sync(ServerPlayer player) {
+        if (player instanceof ServerPlayer) {
+            PacketHandler.sendTo(new ManaPacket(serializeNBT()), player);
+        }
+    }
 }
