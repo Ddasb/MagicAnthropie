@@ -1,10 +1,6 @@
 {
-  "item.magicanthropie.mana_dust": "Mana Dust",
-  "item.magicanthropie.mana_infused_ingot": "Mana Infused Ingot",
-  "item.magicanthropie.mana_infused_powder": "Mana Infused Powder",
-  "item.magicanthropie.mana_manipulation_staff": "Mana Manipulation Staff",
+  "itemGroup.magicanthropie_tab": "Magic Anthropie",
 
-  "block.magicanthropie.mana_cell": "Mana Cell",
-
-  "itemGroup.magicanthropie_tab": "Magic Anthropie"
+  "block.magicanthropie.crystalized_mana_ore": "Crystalized Mana Ore",
+  "block.magicanthropie.deepslate_crystalized_mana_ore": "Deepslate Crystalized Mana Ore"
 }

@@ -1,7 +1,6 @@
 package com.kiuseii.magicanthropie.network;
 
 import com.kiuseii.magicanthropie.capabilities.CapabilityRegistry;
-import com.kiuseii.magicanthropie.capabilities.ManaCap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;

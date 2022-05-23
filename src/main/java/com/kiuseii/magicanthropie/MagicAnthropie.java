@@ -6,7 +6,9 @@ import com.kiuseii.magicanthropie.network.PacketHandler;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -22,7 +24,7 @@ public class MagicAnthropie {
     public static final CreativeModeTab MAGICANTHROPIE_TAB = new CreativeModeTab("magicanthropie_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ItemRegistry.MANA_DUST.get());
+            return new ItemStack(Items.BOOK);
         }
     };
 
@@ -39,7 +41,7 @@ public class MagicAnthropie {
     }
 
     private void clientSetup (final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(BlockRegistry.MANA_CELL.get(), RenderType.translucent());
+        // ItemBlockRenderTypes.setRenderLayer(BlockRegistry.MANA_CELL.get(), RenderType.translucent());
     }
 
     private void setup(final FMLCommonSetupEvent event) {

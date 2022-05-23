@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "magicanthropie:block/deepslate_crystalized_mana_ore"
+  }
+}
